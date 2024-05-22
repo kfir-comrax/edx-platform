@@ -2,13 +2,7 @@
   "lms-1": {
     "settings": "lms.envs.test",
     "paths": [
-      "lms/djangoapps/branding/",
-      "lms/djangoapps/bulk_email/",
-      "lms/djangoapps/bulk_enroll/",
-      "lms/djangoapps/bulk_user_retirement/",
-      "lms/djangoapps/ccx/",
-      "lms/djangoapps/certificates/",
-      "lms/djangoapps/commerce/"
+      "lms/djangoapps/commerce/api/v1/tests/"
     ]
   },
   "lms-2": {

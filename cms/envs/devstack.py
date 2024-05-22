@@ -232,13 +232,13 @@ OPENAPI_CACHE_TIMEOUT = 0
 
 #####################################################################
 # set replica set of contentstore to none as we haven't setup any for cms in devstack
-CONTENTSTORE['DOC_STORE_CONFIG']['replicaSet'] = None
+# CONTENTSTORE['DOC_STORE_CONFIG']['replicaSet'] = None
 
 #####################################################################
 # set replica sets of moduelstore to none as we haven't setup any for cms in devstack
-for store in MODULESTORE['default']['OPTIONS']['stores']:
-    if 'DOC_STORE_CONFIG' in store and 'replicaSet' in store['DOC_STORE_CONFIG']:
-        store['DOC_STORE_CONFIG']['replicaSet'] = None
+# for store in MODULESTORE['default']['OPTIONS']['stores']:
+#     if 'DOC_STORE_CONFIG' in store and 'replicaSet' in store['DOC_STORE_CONFIG']:
+#         store['DOC_STORE_CONFIG']['replicaSet'] = None
 
 
 #####################################################################

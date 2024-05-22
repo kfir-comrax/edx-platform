@@ -846,7 +846,7 @@ class MongoModuleStore(ModuleStoreDraftAndPublished, ModuleStoreWriteBase, Mongo
         except ItemNotFoundError:
             return None
 
-    @autoretry_read()
+    # @autoretry_read()
     def has_course(self, course_key, ignore_case=False, **kwargs):  # lint-amnesty, pylint: disable=arguments-differ
         """
         Returns the course_id of the course if it was found, else None
@@ -856,7 +856,6 @@ class MongoModuleStore(ModuleStoreDraftAndPublished, ModuleStoreWriteBase, Mongo
         If ignore_case is True, do a case insensitive search,
         otherwise, do a case sensitive search
         """
-        # import pdb; pdb.set_trace() # pdb3 🔥
         assert isinstance(course_key, CourseKey)
 
         if not course_key.deprecated:  # split course_key
@@ -874,6 +873,7 @@ class MongoModuleStore(ModuleStoreDraftAndPublished, ModuleStoreWriteBase, Mongo
                     course_query[key] = re.compile(r"(?i)^{}$".format(course_query[key]))
         else:
             course_query = {'_id': location.to_deprecated_son()}
+        # import pdb; pdb.set_trace() # pdb3 🔥
         course = self.collection.find_one(course_query, projection={'_id': True})
         if course:
             return CourseKey.from_string('/'.join([

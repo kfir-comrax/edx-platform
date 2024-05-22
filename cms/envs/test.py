@@ -115,6 +115,7 @@ CONTENTSTORE = {
         'db': f'test_xcontent_{THIS_UUID}',
         'port': MONGO_PORT_NUM,
         'collection': 'dont_trip',
+        'replicaSet': '',
     },
     # allow for additional options that can be keyed on a name, e.g. 'trashcan'
     'ADDITIONAL_OPTIONS': {

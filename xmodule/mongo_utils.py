@@ -56,17 +56,17 @@ def connect_to_mongodb(
         'port': port,
         'tz_aware': tz_aware,
         'document_class': dict,
-        'authSource': db,
+        # 'authSource': auth_source,
         'directConnection': True,
         **kwargs,
     }
 
     if user is not None and password is not None:
-        connection_params.update({'user': user, 'password': password})
+        connection_params.update({'username': user, 'password': password})
 
     # import pdb; pdb.set_trace() # pdb9
     mongo_conn = pymongo.database.Database(
-        pymongo.MongoClient(connection_params),
+        pymongo.MongoClient(**connection_params),
         db
     )
 

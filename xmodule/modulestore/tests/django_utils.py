@@ -153,6 +153,7 @@ def contentstore_config():
             'host': MONGO_HOST,
             'db': f'test_xcontent_{os.getpid()}',
             'port': MONGO_PORT_NUM,
+            'replicaSet': '',
         },
         # allow for additional options that can be keyed on a name, e.g. 'trashcan'
         'ADDITIONAL_OPTIONS': {

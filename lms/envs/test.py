@@ -177,6 +177,7 @@ CONTENTSTORE = {
         'host': MONGO_HOST,
         'db': f'test_xcontent_{THIS_UUID}',
         'port': MONGO_PORT_NUM,
+        'replicaSet': '',
     }
 }
 
